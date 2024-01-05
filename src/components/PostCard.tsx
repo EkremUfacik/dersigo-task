@@ -7,7 +7,9 @@ const PostCard = ({ post }: { post: Post }) => {
   console.log(post);
   const formatDate = (date: string) => {
     const dateObj = new Date(date);
-    return `${dateObj.getDate()}/${dateObj.getMonth()}/${dateObj.getFullYear()}`;
+    return `${dateObj.getDate()}/${
+      dateObj.getMonth() + 1
+    }/${dateObj.getFullYear()}`;
   };
 
   return (
