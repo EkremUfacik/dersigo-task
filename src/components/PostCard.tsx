@@ -43,7 +43,7 @@ const PostCard = ({ post }: { post: Post }) => {
         </div>
         <div className="flex flex-col justify-between flex-1 ">
           <p className="font-semibold mt-2">{post.text}</p>
-          <div className="space-x-4">
+          <div className="space-x-4 space-y-2">
             <PostEditModal postId={post.id} />
             <PostDeleteButton postId={post.id} />
           </div>

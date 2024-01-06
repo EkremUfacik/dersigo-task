@@ -12,7 +12,7 @@ const UserCard = ({ user }: { user: User }) => {
           alt="user"
           width={100}
           height={100}
-          className="size-20 rounded-full "
+          className="size-12 sm:size-20 aspect-square rounded-full "
         />
       </div>
       <div>
@@ -26,7 +26,8 @@ const UserCard = ({ user }: { user: User }) => {
           {user.firstName} {user.lastName}
         </p>
       </div>
-      <div className="ml-auto">
+
+      <div className="text-end ml-auto space-y-2">
         <UserEditModal userId={user.id} />
         <UserDeleteButton userId={user.id} />
       </div>

@@ -14,7 +14,7 @@ const Home = async () => {
         <UserCreateModal />
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-8 mb-10 p-12">
+      <div className="grid lg:grid-cols-2 gap-8 mb-10 p-6 md:p-12">
         {users.map((user) => (
           <UserCard key={user.id} user={user} />
         ))}
