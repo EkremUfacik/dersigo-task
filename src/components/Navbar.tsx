@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const pathname = usePathname();
+
   return (
     <nav className="bg-slate-200 p-4 text-center space-x-6 text-lg">
       <Link

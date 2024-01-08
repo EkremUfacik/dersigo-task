@@ -10,7 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { Post, UserDetails } from "@/types/types";
+import { Post } from "@/types/types";
 import { FieldValues, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -29,8 +29,6 @@ const PostEditModal = ({ postId }: { postId: string }) => {
     queryFn: () => getPost(postId),
     enabled: open,
   });
-
-  console.log(post);
 
   const form = useForm();
 

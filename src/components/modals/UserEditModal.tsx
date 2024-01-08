@@ -30,8 +30,6 @@ const UserEditModal = ({ userId }: { userId: string }) => {
     enabled: open,
   });
 
-  console.log(user);
-
   const form = useForm();
 
   const { isSubmitting } = form.formState;

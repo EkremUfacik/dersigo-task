@@ -3,9 +3,17 @@ import { User, UserDetails } from "@/types/types";
 import { axiosWithAppId } from "./axiosInstance";
 import { FieldValues } from "react-hook-form";
 
-export const getUsers = async (): Promise<User[]> => {
+export const getUsers = async (search = ""): Promise<User[]> => {
+  console.log(search);
   const { data } = await fetcher("/user?page=4");
-  return data;
+  if (!search) return data;
+
+  const filteredData = data.filter(
+    (user: User) =>
+      user.firstName.toLowerCase().includes(search.toLowerCase()) ||
+      user.lastName.toLowerCase().includes(search.toLowerCase())
+  );
+  return filteredData;
 };
 export const getUser = async (id: string): Promise<UserDetails> => {
   const data = await fetcher(`/user/${id}`);

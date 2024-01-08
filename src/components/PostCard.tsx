@@ -4,7 +4,6 @@ import { Post } from "@/types/types";
 import PostEditModal from "./modals/PostEditModal";
 
 const PostCard = ({ post }: { post: Post }) => {
-  console.log(post);
   const formatDate = (date: string) => {
     const dateObj = new Date(date);
     return `${dateObj.getDate()}/${

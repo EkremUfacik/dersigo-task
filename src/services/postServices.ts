@@ -3,9 +3,14 @@ import { axiosWithAppId } from "./axiosInstance";
 import { Post } from "@/types/types";
 import { FieldValues } from "react-hook-form";
 
-export const getPosts = async (): Promise<Post[]> => {
+export const getPosts = async (search = ""): Promise<Post[]> => {
   const { data } = await fetcher("/post");
-  return data;
+  if (!search) return data;
+
+  const filteredData = data.filter((post: Post) =>
+    post.text.toLowerCase().includes(search.toLowerCase())
+  );
+  return filteredData;
 };
 
 export const getPost = async (id: string): Promise<Post> => {
@@ -15,7 +20,7 @@ export const getPost = async (id: string): Promise<Post> => {
 
 export const createPost = async (postInfo: FieldValues) => {
   await axiosWithAppId.post("/post/create", {
-    owner: "6598568212e4a21519ef2aad",
+    owner: "60d0fe4f5311236168a109fe",
     ...postInfo,
   });
 };
